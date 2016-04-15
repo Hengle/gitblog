@@ -9,7 +9,7 @@
     
     <meta name="author" content="inkiu0 Sur">
     
-    <meta name="description" content="DynamicBone">
+    <meta name="description" content="Unity性能优化">
     
     
     
@@ -65,15 +65,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/gitblog/2016/04/15/DynamicBoneWiki/" title="" itemprop="url"></a>
+      <a href="/gitblog/2016/04/15/内存管理/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://inkiu0.github.io/gitblog" title="inkiu0 Sur">inkiu0 Sur</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-04-15T14:34:24.314Z" itemprop="datePublished">2016-04-15</time>
-    Updated:<time datetime="2016-03-30T20:37:29.450Z" itemprop="dateModified">2016-03-31</time>
+    <time datetime="2016-04-15T15:00:05.106Z" itemprop="datePublished">2016-04-15</time>
+    Updated:<time datetime="2016-04-15T15:04:38.482Z" itemprop="dateModified">2016-04-15</time>
     
   </p>
 </header>
@@ -82,43 +82,11 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DynamicBone"><span class="toc-number">1.</span> <span class="toc-text">DynamicBone</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DynamicBone参数含义"><span class="toc-number">1.1.</span> <span class="toc-text">1. DynamicBone参数含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DynamicBoneCollider参数含义"><span class="toc-number">1.2.</span> <span class="toc-text">2. DynamicBoneCollider参数含义</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity性能优化"><span class="toc-number">1.</span> <span class="toc-text">Unity性能优化</span></a></li></ol>
 		</div>
 		
-		<h1 id="DynamicBone"><a href="#DynamicBone" class="headerlink" title="DynamicBone"></a>DynamicBone</h1><a id="more"></a>  
-<h2 id="1-DynamicBone参数含义"><a href="#1-DynamicBone参数含义" class="headerlink" title="1. DynamicBone参数含义"></a>1. DynamicBone参数含义</h2><ul>
-<li><p><strong><code>Damping</code></strong><br><a href="https://en.wikipedia.org/wiki/Damping#Critical_damping_.28.CE.B6_.3D_1.29" target="_blank" rel="external">阻尼系数</a>:           <strong>代表骨骼受到的阻力。</strong></p>
-<blockquote>
-<p> How much the bones slowed down.<br><em>描述振幅随时间减小的快慢，用于限制跟随速度的大小。阻尼系数越小衰变越慢，阻尼振动时间越长。</em> </p>
-</blockquote>
-</li>
-<li><p><strong><code>Elasticity</code></strong><br><strong>弹性，产生形变后恢复原状的能力。</strong>  </p>
-<blockquote>
-<p>How much the force applied to return each bone to original orientation.  </p>
-</blockquote>
-</li>
-<li><p><strong><code>Siffness</code></strong><br><strong>刚度，骨骼保持原位的能力。</strong></p>
-<blockquote>
-<p>How much bone’s original orientation are preserved.<br>这个值越趋近于1，产生单位位移所需的力则越大，表现得越趋近于刚体。当这个值越趋近于0，表现得越像绳子。</p>
-</blockquote>
-</li>
-<li><p><strong><code>Inert</code></strong><br>角色有多少位移不用于物理模拟  </p>
-</li>
-<li><strong><code>Radius</code></strong><br>每根骨骼球形碰撞体的大小，<strong>Radius</strong> 代表球体的半径。</li>
-<li><strong><code>Damping Distrib / Elasticity Distrib / Siffness Distrib</code></strong><br>参数变化曲线，曲线的值乘以参数值进行插值的。</li>
-<li><strong><code>End Length</code></strong><br>如果这个值不为0，说明有一根额外的骨骼在hierarchy面板中了。length将会乘以两根骨骼的距离</li>
-<li><strong><code>End Offset</code></strong><br>角色localPosition的偏移量</li>
-<li><strong><code>Gravity</code></strong><br>世界坐标系的重力加速度</li>
-<li><strong><code>Force</code></strong><br>施加在骨骼上的力</li>
-<li><strong><code>Colliders</code></strong><br>骨骼的碰撞体，骨骼不会穿透碰撞体。</li>
-<li><strong><code>Exclusions</code></strong><br>骨骼禁用物理模拟</li>
-<li><strong><code>Freeze Axis</code></strong><br>试骨骼在指定平面运动</li>
-<li><strong><code>Distant Disable / Reference Object / Distance To Object</code></strong><br>自动禁用物理模拟，当角色离相机或者玩家太远。如果没有参照物，则使用主相机作为参照物。<h2 id="2-DynamicBoneCollider参数含义"><a href="#2-DynamicBoneCollider参数含义" class="headerlink" title="2. DynamicBoneCollider参数含义"></a>2. DynamicBoneCollider参数含义</h2></li>
-<li><strong><code>Center</code></strong><br>球体或者胶囊体的重心，使用的角色的自身坐标系。</li>
-<li><strong><code>Height</code></strong><br>胶囊体的高度，包含了两个半球的高度。且会随着角色的缩放而缩放。</li>
-<li><strong><code>Direction</code></strong><br>胶囊体的高度轴线。</li>
-<li><strong><code>Bound</code></strong><br>强制使用骨骼的外边界或者内边界。</li>
-</ul>
+		<h1 id="Unity性能优化"><a href="#Unity性能优化" class="headerlink" title="Unity性能优化"></a>Unity性能优化</h1><a id="more"></a>  
+<p>2016.04.15 开始尝试Unity的性能优化</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -128,7 +96,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://inkiu0.github.io/gitblog/gitblog/2016/04/15/DynamicBoneWiki/" data-title="inkiu0&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://inkiu0.github.io/gitblog/gitblog/2016/04/15/内存管理/" data-title="inkiu0&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -137,14 +105,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/gitblog/2016/04/15/Texture Miss/" title="">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  (no title)</span>
+
+<div class="next">
+<a href="/gitblog/2016/04/15/Texture Miss/"  title="">
+ <strong>NEXT:</strong><br/> 
+ <span>(no title)
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -154,7 +122,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DynamicBone"><span class="toc-number">1.</span> <span class="toc-text">DynamicBone</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DynamicBone参数含义"><span class="toc-number">1.1.</span> <span class="toc-text">1. DynamicBone参数含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DynamicBoneCollider参数含义"><span class="toc-number">1.2.</span> <span class="toc-text">2. DynamicBoneCollider参数含义</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity性能优化"><span class="toc-number">1.</span> <span class="toc-text">Unity性能优化</span></a></li></ol>
   </div>
 
 <div id="asidepart">
