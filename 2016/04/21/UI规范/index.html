@@ -10,13 +10,14 @@
     <meta name="author" content="inkiu0 Sur">
     
     <meta name="description" content="UI规范1. 图集制作规范
-++打进图集的图片宽高任何一项都不能大于512，这是强制的++。  
-++少于3个界面共用的图片，不能打进CoreAtlas，这是强制的++。  
-++图集最大不能超过1024x1024，这是强制的++。
+打进图集的图片宽高任何一项都不能大于512，这是强制的。  
+少于3个界面共用的图片，不能打进CoreAtlas，这是强制的。  
+图集最大不能超过1024x1024，这是强制的。
 如果超过了需要拆成2个图集。  
 
 
-普通界面的图集应小于512x">
+普通界面的图集应小于512x512
+如果超过了，可以">
     
     
     
@@ -80,7 +81,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-04-21T15:52:57.865Z" itemprop="datePublished">2016-04-21</time>
-    Updated:<time datetime="2016-04-21T15:52:58.036Z" itemprop="dateModified">2016-04-21</time>
+    Updated:<time datetime="2016-04-21T16:02:12.380Z" itemprop="dateModified">2016-04-22</time>
     
   </p>
 </header>
@@ -93,9 +94,9 @@
 		</div>
 		
 		<h2 id="UI规范"><a href="#UI规范" class="headerlink" title="UI规范"></a>UI规范</h2><h3 id="1-图集制作规范"><a href="#1-图集制作规范" class="headerlink" title="1. 图集制作规范"></a>1. 图集制作规范</h3><ul>
-<li><strong>++打进图集的图片宽高任何一项都不能大于512，这是强制的++。</strong>  </li>
-<li><strong>++少于3个界面共用的图片，不能打进CoreAtlas，这是强制的++。</strong>  </li>
-<li><strong>++图集最大不能超过1024x1024，这是强制的++。</strong><ul>
+<li><strong><u>打进图集的图片宽高任何一项都不能大于512，这是强制的</u>。</strong>  </li>
+<li><strong><u>少于3个界面共用的图片，不能打进CoreAtlas，这是强制的</u>。</strong>  </li>
+<li><strong><u>图集最大不能超过1024x1024，这是强制的。</u></strong><ul>
 <li>如果超过了需要拆成2个图集。  </li>
 </ul>
 </li>
@@ -131,6 +132,7 @@
 <li>如果必须这么做的话，需要时刻注意在适当的时候销毁它。<h3 id="2-美术规范"><a href="#2-美术规范" class="headerlink" title="2. 美术规范"></a>2. 美术规范</h3></li>
 </ul>
 </li>
+<li><strong>美术资源尽量复用</strong>  </li>
 <li><strong>能使用九宫格就使用九宫格</strong><br><img src="http://ww3.sinaimg.cn/mw690/df41a921gw1f33hx0v0qkj20b5065jr9.jpg" alt="image"><br><em>像这样的纯色图片完全可以只使用9个像素，尽量避免一个sprite的宽/高任何一项大于150。</em></li>
 <li>图片能对称就对称，这样的话图片只需要画一半，也能有效减少内存占用。</li>
 <li>大的背景图尽量不使用Alpha值，使得图片可以更好地被压缩。</li>
