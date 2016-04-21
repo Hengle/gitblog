@@ -73,7 +73,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-04-21T15:52:57.865Z" itemprop="datePublished">2016-04-21</time>
-    Updated:<time datetime="2016-04-21T16:07:57.434Z" itemprop="dateModified">2016-04-22</time>
+    Updated:<time datetime="2016-04-21T16:11:50.374Z" itemprop="dateModified">2016-04-22</time>
     
   </p>
 </header>
@@ -82,15 +82,13 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UI规范"><span class="toc-number">1.</span> <span class="toc-text">UI规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-图集制作规范"><span class="toc-number">1.1.</span> <span class="toc-text">1. 图集制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-界面制作规范"><span class="toc-number">1.2.</span> <span class="toc-text">2. 界面制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-美术规范"><span class="toc-number">1.3.</span> <span class="toc-text">2. 美术规范</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UI规范"><span class="toc-number">1.</span> <span class="toc-text">UI规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图集制作规范"><span class="toc-number">1.1.</span> <span class="toc-text">图集制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面制作规范"><span class="toc-number">1.2.</span> <span class="toc-text">界面制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#美术规范"><span class="toc-number">1.3.</span> <span class="toc-text">美术规范</span></a></li></ol></li></ol>
 		</div>
 		
 		<h1 id="UI规范"><a href="#UI规范" class="headerlink" title="UI规范"></a>UI规范</h1><a id="more"></a>  
-<h2 id="1-图集制作规范"><a href="#1-图集制作规范" class="headerlink" title="1. 图集制作规范"></a>1. 图集制作规范</h2><ol>
+<h2 id="图集制作规范"><a href="#图集制作规范" class="headerlink" title="图集制作规范"></a>图集制作规范</h2><ol>
 <li><strong><u>打进图集的图片宽高任何一项都不能大于512，这是强制的</u>。</strong>  </li>
 <li><strong><u>少于3个界面共用的图片，不能打进CoreAtlas，这是强制的</u>。</strong>  </li>
-</ol>
-<ul>
 <li><strong><u>图集最大不能超过1024x1024，这是强制的。</u></strong><ul>
 <li>如果超过了需要拆成2个图集。  </li>
 </ul>
@@ -113,11 +111,9 @@
 </ul>
 </li>
 <li>图集的Format选择Automatic tureColor  </li>
-</ul>
-<h2 id="2-界面制作规范"><a href="#2-界面制作规范" class="headerlink" title="2. 界面制作规范"></a>2. 界面制作规范</h2><ol>
-<li>一个界面只能引用CoreAtlas和自身Atlas。</li>
 </ol>
-<ul>
+<h2 id="界面制作规范"><a href="#界面制作规范" class="headerlink" title="界面制作规范"></a>界面制作规范</h2><ol>
+<li>一个界面只能引用CoreAtlas和自身Atlas。</li>
 <li>应将UI界面进行规划分层，以减少drawcall，原则是：<ul>
 <li>同一图集的sprite处于同一层，中间不夹杂其他图集的图片或者Texture。</li>
 <li>一个字体是一个独立的层级，尽量使一个字体只消耗一个drawcall。</li>
@@ -131,15 +127,15 @@
 <li>如果必须这么做的话，需要时刻注意在适当的时候销毁它。  </li>
 </ul>
 </li>
-</ul>
-<h2 id="2-美术规范"><a href="#2-美术规范" class="headerlink" title="2. 美术规范"></a>2. 美术规范</h2><ul>
+</ol>
+<h2 id="美术规范"><a href="#美术规范" class="headerlink" title="美术规范"></a>美术规范</h2><ol>
 <li><strong>美术资源尽量复用</strong>  </li>
-<li><p><strong>能使用九宫格就使用九宫格</strong><br><img src="http://ww3.sinaimg.cn/mw690/df41a921gw1f33hx0v0qkj20b5065jr9.jpg" alt="image"><br>  <em>像这样的纯色图片完全可以只使用9个像素，尽量避免一个sprite的宽/高任何一项大于150。</em></p>
+<li><p><strong>能使用九宫格就使用九宫格</strong><br><img src="http://ww3.sinaimg.cn/mw690/df41a921gw1f33hx0v0qkj20b5065jr9.jpg" alt="image"><br> <em>像这样的纯色图片完全可以只使用9个像素，尽量避免一个sprite的宽/高任何一项大于150。</em></p>
 </li>
 <li><p>图片能对称就对称，这样的话图片只需要画一半，也能有效减少内存占用。</p>
 </li>
 <li>大的背景图尽量不使用Alpha值，使得图片可以更好地被压缩。</li>
-</ul>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -175,7 +171,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UI规范"><span class="toc-number">1.</span> <span class="toc-text">UI规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-图集制作规范"><span class="toc-number">1.1.</span> <span class="toc-text">1. 图集制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-界面制作规范"><span class="toc-number">1.2.</span> <span class="toc-text">2. 界面制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-美术规范"><span class="toc-number">1.3.</span> <span class="toc-text">2. 美术规范</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UI规范"><span class="toc-number">1.</span> <span class="toc-text">UI规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图集制作规范"><span class="toc-number">1.1.</span> <span class="toc-text">图集制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面制作规范"><span class="toc-number">1.2.</span> <span class="toc-text">界面制作规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#美术规范"><span class="toc-number">1.3.</span> <span class="toc-text">美术规范</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
